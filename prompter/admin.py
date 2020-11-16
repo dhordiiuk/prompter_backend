@@ -8,7 +8,7 @@ class ModeAdmin(admin.ModelAdmin):
 
 
 class WordAdmin(admin.ModelAdmin):
-    list_display = ('name', 'importance', 'mode', 'use')
+    list_display = ('name', 'weight', 'mode', 'use')
     list_filter = ['mode']
 
 

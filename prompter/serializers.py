@@ -11,4 +11,4 @@ class ModeSerializer(serializers.ModelSerializer):
 class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
-        fields = ('id', 'name', 'importance', 'use', 'mode')
+        fields = ('id', 'name', 'weight', 'use', 'mode')

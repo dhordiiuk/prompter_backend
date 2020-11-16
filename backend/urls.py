@@ -26,5 +26,6 @@ router.register(r'words', views.WordView, 'words')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path("", views.index, name="index")
   ]

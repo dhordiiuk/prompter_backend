@@ -20,7 +20,7 @@ class Mode(models.Model):
 class Word(models.Model):
     mode = models.ForeignKey(Mode, related_name='words', on_delete=models.CASCADE)
     name = models.CharField(max_length=120, db_index=True)
-    importance = models.IntegerField(default=5,
+    weight = models.IntegerField(default=5,
                                     validators=[
                                         MaxValueValidator(10),
                                         MinValueValidator(0)
@@ -28,7 +28,7 @@ class Word(models.Model):
     use = models.BooleanField(default=True)
 
     class Meta:
-        unique_together = ('mode', 'name', 'importance', 'use')
+        unique_together = ('mode', 'name', 'weight', 'use')
 
     def __str__(self):
         return self.name
